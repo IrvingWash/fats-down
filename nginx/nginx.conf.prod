@@ -6,5 +6,9 @@ server {
   location / {
     proxy_pass http://client:8080;
   }
+
+	location /api {
+		proxy_pass http://server:3333;
+	}
 }
 

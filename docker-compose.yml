@@ -6,10 +6,6 @@ services:
     build: ./fats-down-client
     command: npm run start
     restart: unless-stopped
-    ports:
-      - "8080:8080"
-    environment:
-      - FDApiUrl=http://localhost:3333
     depends_on:
       - server
     networks:
@@ -20,8 +16,6 @@ services:
     build: ./fats-down-server
     command: npm run start
     restart: unless-stopped
-    ports:
-      - "3333:3333"
     environment:
       - Port=3333
       - ClientUrl=client
@@ -49,8 +43,6 @@ services:
       - POSTGRES_DB=fats_down
     volumes:
       - postgres_api:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
     networks:
       - fats-down-network
 
