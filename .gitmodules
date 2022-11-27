@@ -1,6 +1,6 @@
 [submodule "fats-down-server"]
 	path = fats-down-server
-	url = ./fats-down-server
+	url = https://github.com/IrvingWash/fats-down-client.git
 [submodule "fats-down-client"]
 	path = fats-down-client
-	url = ./fats-down-client
+	url = https://github.com/IrvingWash/fats-down-client.git
