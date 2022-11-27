@@ -15,7 +15,7 @@ $ docker-compose build
 $ docker-compose up
 ```
 
-## Withoud docker
+## Without docker
 - In /fats-down-server
 ``` bash
 npm run start
