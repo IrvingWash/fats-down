@@ -8,7 +8,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - FDApiUrl=server
+      - FDApiUrl=http://localhost:3333
     depends_on:
       - server
 
@@ -20,7 +20,7 @@ services:
       - "3333:3333"
     environment:
       - Port=3333
-      - ClientUrl=http://localhost:8080
+      - ClientUrl=client
       - AccessSecret=gorguts
       - RefreshSecret=krallice
       - DbType=postgres
@@ -29,7 +29,7 @@ services:
       - DbDatabase=fats_down
       - DbUser=root
       - DbPassword=root
-      - DbSynchronize=false
+      - DbSynchronize=true
     depends_on:
       -  db
 
@@ -40,5 +40,7 @@ services:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=fats_down
+    volumes:
+      - postgres_api:/var/lib/postgresql/data
     ports:
       - "5432:5432"
