@@ -48,5 +48,15 @@ services:
     ports:
       - "5432:5432"
 
+  nginx:
+    image: nginx:stable-alpine
+    container_name: fats-down-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf.prod:/etc/nginx/conf.d/nginx.conf
+    depends_on:
+      - client
+
 volumes:
   postgres_api:
