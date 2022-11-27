@@ -2,6 +2,7 @@ version: '3'
 
 services:
   client:
+    container_name: fats-down-client
     build: ./fats-down-client
     command: npm run start
     restart: unless-stopped
@@ -13,6 +14,7 @@ services:
       - server
 
   server:
+    container_name: fats-down-server
     build: ./fats-down-server
     command: npm run start
     restart: unless-stopped
@@ -34,6 +36,7 @@ services:
       -  db
 
   db:
+    container_name: fats-down-db
     image: postgres:15.1-alpine
     restart: unless-stopped
     environment:
