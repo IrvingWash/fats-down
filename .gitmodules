@@ -1,0 +1,6 @@
+[submodule "fats-down-server"]
+	path = fats-down-server
+	url = ./fats-down-server
+[submodule "fats-down-client"]
+	path = fats-down-client
+	url = ./fats-down-client
