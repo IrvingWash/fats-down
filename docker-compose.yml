@@ -1,6 +1,16 @@
 version: '3'
 
 services:
+  client:
+    build: ./fats-down-client
+    command: npm run start
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - FDApiUrl=server
+    depends_on:
+      - server
 
   server:
     build: ./fats-down-server
