@@ -8,6 +8,10 @@
 - Docker
 
 ## How to start
+- Clone the repo and submodules
+```
+git clone --recurse-submodules https://github.com/IrvingWash/fats-down.git
+```
 
 ## Using Docker
 ``` bash
