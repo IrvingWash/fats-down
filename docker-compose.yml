@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  server:
+    container_name: fats_down_server
+    build: ./fats-down-server-2.0
+    command: npm run start
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - CLIENT_URL=http://localhost:8080
+      - ACCESS_SECRET=Orgone
+      - REFRESH_SECRET=Krallice
+      - DB_TYPE=postgres
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=fats_down
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_SYNCHRONIZE=false
+    depends_on:
+      - db
+    networks:
+      - fats_down_network
+
+  db:
+    container_name: fats_down_db
+    image: postgres:15.1-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=fats_down
+    volumes:
+      - postgres_api:/var/lib/postgresql/data
+    networks:
+      - fats_down_network
+
+volumes:
+  postgres_api:
+
+networks:
+  fats_down_network:
+    driver: bridge
