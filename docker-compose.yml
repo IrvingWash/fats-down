@@ -1,6 +1,15 @@
 version: '3.8'
 
 services:
+  client:
+    container_name: fats_down_client
+    build: ./fats-down-client-2.0
+    command: npm run start
+    depends_on:
+      - server
+    networks:
+      - fats_down_network
+
   server:
     container_name: fats_down_server
     build: ./fats-down-server-2.0
