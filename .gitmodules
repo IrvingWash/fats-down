@@ -1,0 +1,6 @@
+[submodule "fats-down-server"]
+	path = fats-down-server
+	url = git@github.com:IrvingWash/fats-down-server.git
+[submodule "fats-down-client"]
+	path = fats-down-client
+	url = git@github.com:IrvingWash/fats-down-client.git
