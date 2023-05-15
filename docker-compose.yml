@@ -53,6 +53,19 @@ services:
     networks:
       - fats_down_network
 
+  # nginx:
+  #   image: nginx:stable-alpine
+  #   container_name: fats_down_nginx
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx/nginx.conf.prod:/etc/nginx/conf.d/nginx.conf
+  #   depends_on:
+  #     - client
+  #     - server
+  #   networks:
+  #     - fats_down_network
+
 volumes:
   postgres_api:
 
