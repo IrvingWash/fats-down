@@ -34,7 +34,7 @@ services:
       - DB_NAME=fats_down
       - DB_USER=root
       - DB_PASSWORD=root
-      - DB_SYNCHRONIZE=false
+      - DB_SYNCHRONIZE=true
     depends_on:
       - db
     networks:
