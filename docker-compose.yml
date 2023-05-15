@@ -3,7 +3,7 @@ version: '3.8'
 services:
   client:
     container_name: fats_down_client
-    build: ./fats-down-client-2.0
+    build: ./fats-down-client
     command: npm run start
     restart: unless-stopped
     ports:
@@ -18,7 +18,7 @@ services:
 
   server:
     container_name: fats_down_server
-    build: ./fats-down-server-2.0
+    build: ./fats-down-server
     command: npm run start
     restart: unless-stopped
     ports:
